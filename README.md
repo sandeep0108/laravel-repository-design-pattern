@@ -24,4 +24,4 @@ php artisan serve
 
 Import below postman collection:
 
-https://github.com/sandeep0108/laravel-repository-design-pattern/laravel-repository-design-pattern.postman_collection.json
+https://github.com/sandeep0108/laravel-repository-design-pattern/blob/main/laravel-repository-design-pattern.postman_collection.json
