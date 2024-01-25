@@ -16,7 +16,6 @@ class ProductController extends Controller
     public function __construct(
         private readonly ProductRepository $productRepository
     ) {
-
     }
 
     public function index(): JsonResponse
@@ -28,6 +27,8 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request): JsonResponse
     {
+        dd('test');
+        dd('tete');
         return response()->json(
             [
                 'data' => $this->productRepository->createProduct($request->validated())

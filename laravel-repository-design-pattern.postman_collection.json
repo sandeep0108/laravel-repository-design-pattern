@@ -32,6 +32,9 @@
 		{
 			"name": "Store",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -88,8 +91,32 @@
 		{
 			"name": "Update",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Admin@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test@example.com",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Dora Koch\",\n    \"description\": \"In itaque exercitationem explicabo enim quos aut vitae. Saepe qui impedit sunt exercitationem fugiat unde et est. Dolorem rerum praesentium amet inventore omnis.\",\n    \"is_available\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://127.0.0.1:8000/api/product/1",
 					"protocol": "http",
@@ -128,6 +155,47 @@
 						"api",
 						"product",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "test@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Admin@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
 					]
 				}
 			},
